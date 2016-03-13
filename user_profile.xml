@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<linkedInCrawler>
+   <element key="ProfileName" selectQuery="h1#name" parentQuery="div#profile section.profile-section#topcard div.profile-overview" />
+   <element key="Title" selectQuery="p[data-section=headline]" parentQuery="div#profile section.profile-section#topcard div.profile-overview" />
+   <element key="Location | Industry" selectQuery="dl#demographics &gt; dd.descriptor" parentQuery="div#profile section.profile-section#topcard div.profile-overview" />
+   <element key="Profile Connections" selectQuery="div.member-connections" parentQuery="div#profile section.profile-section#topcard div.profile-overview" />
+   <element key="Current Organisations:" parentQuery="div#profile section.profile-section#topcard div.profile-overview table.extra-info tr td ol li">
+      <element key="Org1:" selectQuery="span.org" hrefLink="true" />
+      <element key="Org2:" selectQuery="span" hrefLink="true" />
+   </element>
+   <element key="Profile Summary" selectQuery="div.description p" parentQuery="div#profile section.profile-section#summary " />
+   <element key="Experience" parentQuery="div#profile section.profile-section#experience &gt; ul.positions li.position " templateIterationCount="7">
+      <element key="Title" hrefLink="true" selectQuery="header h4.item-title" />
+      <element key="Organisation" hrefLink="true" selectQuery="header h5.item-subtitle" />
+      <element key="Duration" selectQuery="div.meta span.date-range" />
+      <element key="Location" selectQuery="div.meta span.location" />
+      <element key="Description" selectQuery="p.description" />
+   </element>
+   <element key="Awards" parentQuery="div#profile section.profile-section#awards &gt; ul li.award " templateIterationCount="2">
+      <element key="Title" selectQuery="header h4.item-title" />
+      <element key="Program" selectQuery="header h5.item-subtitle" />
+      <element key="Duration" selectQuery="div.meta span.date-range" />
+      <element key="Description" selectQuery="p.description" />
+   </element>
+   <element key="Languages" parentQuery="div#profile section.profile-section#languages &gt; ul li.language " templateIterationCount="3">
+      <element key="Name:" selectQuery="div.wrap h4.name" />
+      <element key="Proficiency:" selectQuery="div.wrap p.proficiency" />
+   </element>
+   <element key="Education" parentQuery="div#profile section.profile-section#education &gt; ul.schools li.school " templateIterationCount="4">
+      <element key="Institute" hrefLink="true" selectQuery="header h4.item-title" />
+      <element key="Degree" selectQuery="header h5.item-subtitle" />
+      <element key="Duration" selectQuery="div.meta span.date-range" />
+      <element key="Description" selectQuery="div.description p" />
+   </element>
+   <element key="Recommendations" parentQuery="section.profile-section#recommendations &gt; div.content &gt; ul li.recommendation-container " templateIterationCount="2">
+      <element key="Recommendation:" selectQuery="blockquote.recommendation" />
+   </element>
+</linkedInCrawler>
